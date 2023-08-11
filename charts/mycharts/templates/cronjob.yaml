@@ -64,8 +64,9 @@ spec:
                 - name: LOAD_KUBERNETES_CONFIG_FROM_DEFAULT
                   value: 'false'
               args:
+                - "$(JUPITERONE_ACCOUNT_ID)"
+                - "$(JUPITERONE_API_KEY)"              
                 - "$(jenkins_URL)"
                 - "$(jenkins_USER)"
                 - "$(jenkins_PASSWORD)" 
-                - "$(JUPITERONE_ACCOUNT_ID)"
-                - "$(JUPITERONE_API_KEY)" 
+ 
