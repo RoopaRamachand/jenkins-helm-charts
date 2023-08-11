@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   jenkins-scripts:
   - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-08-11T12:54:37.334909136Z"
+    description: A Helm chart to insert jenkins data into JupiterOne
+    digest: 9cebd4a43b96438db20659d5b19ffd05536ed63f773b36fa326541d0dddcb829
+    name: jenkins-scripts
+    type: application
+    urls:
+    - https://github.com/RoopaRamachand/jenkins-helm-charts/releases/download/jenkins-scripts-0.1.1/jenkins-scripts-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2023-08-11T12:51:12.635318819Z"
     description: A Helm chart to insert jenkins data into JupiterOne
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/RoopaRamachand/jenkins-helm-charts/releases/download/jenkins-scripts-0.1.0/jenkins-scripts-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-11T12:51:12.635325919Z"
+generated: "2023-08-11T12:54:37.334915436Z"
