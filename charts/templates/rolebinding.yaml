@@ -1,0 +1,24 @@
+{{- if and .Values.rbac.create (eq .Values.rbac.useClusterRole false) -}}
+{{ range $.Values.namespaces -}}
+---
+apiVersion: {{ template "rbac.apiVersion" $ }}
+kind: RoleBinding
+metadata:
+  labels:
+    {{- include "jenkins-scripts.labels" $ | nindent 4 }}
+  name: {{ template "jenkins-scripts.fullname" $ }}
+  namespace: {{ . }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ template "jenkins-scripts.serviceAccountName" $ }}
+{{ include "jenkins-scripts.namespace" $ | indent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+{{- if (not $.Values.useExistingRole) }}
+  name: {{ template "jenkins-scripts.fullname" $ }}
+{{- else }}
+  name: {{ $.Values.useExistingRole }}
+{{- end }}
+{{- end }}
+{{ end }}
